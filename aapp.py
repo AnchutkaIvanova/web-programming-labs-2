@@ -1,10 +1,15 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 app = Flask(__name__)
 
 @app.route("/")
 @app.route("/index")
-def start()
-     return """
+def start():
+     return redirect("/menu", code=302)
+
+@app.route("/menu")
+def menu():
+    return"""
+<!doctype html>
 <html>
      <head>
            <title>НГТУ, ФБ, Лабораторные работы</title>
@@ -26,7 +31,7 @@ def lab1():
 <!doctype html>
 <html>
      <head>
-           <title>Иванова Анна Алексеевна, лабораторная 1</title>
+           <title>Иванова Анна Алексеевна, лабораторная 6</title>
 	
             </header>
             <h1>web-сервер на flask</h1>
@@ -37,7 +42,7 @@ def lab1():
             веб-приложений, сознательно предоставляющих лишь самые базовые возможности.
             </p>
             <footer>
-            &copy; Иванова Анна, ФБИ-14, 3 курс, 2023
+            &copy; Анна Алексеевна, ФБИ-14, 3 курс, 2023
             </footer>
         </body>
 </html>
