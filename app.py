@@ -1,10 +1,12 @@
 from flask import Flask, redirect, url_for
 #url_for возвращает нужный нам путь в виде строки.
-app = Flask(__name__)
-@app.route("/")
+#redirect - автоматическая переадресация посетителя с одного URL-адреса на другой.
+#из пакета flask добываем класс Flask:
+app = Flask(__name__) #Объект приложения 
+@app.route("/")#Первый роут, или путь
 @app.route("/index")
 def start():
-    return redirect("/menu", code=302)
+    return redirect("/menu", code=302)# Return возвращает значение функции, возвращать означает выдать результат вычисления функции. 
 
 @app.route("/menu")
 def menu():
@@ -19,7 +21,7 @@ def menu():
             НГТУ, ФБ, WEB-программирование, часть 2. Спиок лабораторных
             </header>
 
-            <ol>
+            <ol> 
              <a href="/lab1" target="_blank" >Первая лабораторная</a>
             </ol>
 
@@ -48,7 +50,8 @@ def lab1():
             Werkzeug, а также шаблонизатор Jinja2. Относится к категории так называемых микрофреймворков минималистичных каркасов
             веб-приложений, сознательно предоставляющих лишь самые базовые возможности.
             </p>
-                <a href="/menu" target="_blank" >Меню</a>
+                <a href="/menu" target="_blank" >Меню</a>          # CСылка, прикоротой меню открывается в новом окне
+                
                 <h2>Реализованные роуты</h2>
                 <ul>
                    <li>
@@ -80,7 +83,7 @@ def oak():
         <title>Иванова Анна Алексеевна, лабораторная 1</title>
     </head>
      <body>
-     <link rel="stylesheet" href="'''+ url_for('static', filename='lab1.css')+'''">
+     <link rel="stylesheet" href="'''+ url_for('static', filename='lab1.css')+'''">  #фрейворк указывает путь к файлу, link, нужен для подключения стилей
      <header>
      НГТУ, ФБ, Лабораторная работа 1
      </header>
