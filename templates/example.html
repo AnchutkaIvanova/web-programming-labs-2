@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Иванова Анна. {{laba2}}</title>
+    <title>
+        {% if student %}
+            {{ student }},
+        {% else %}
+            Анонимус,
+        {% endif %}
+         {{laba2}}
+        </title>
 </head>
 <body>
     <header>
- Web-программирование, часть 2. {{laba2}}
+        Web-программирование, часть 2. {% if laba2 %}Лабораторная работа 2{% endif %}
     </header>
 
     <main>
@@ -19,7 +26,25 @@
     </main>
 
     <footer>
- &copy; {{name}}, {{group}}, {{kurs}}, 2023
+        &copy; 
+        {% if name %}
+            {{ name }},
+        {% else %}
+            Анонимус,
+        {% endif %}
+
+        {% if group %}
+            {{ group }},
+        {% else %}
+            Пусто,
+        {% endif %}
+
+        {% if kurs %}
+            {{ kurs }},
+        {% else %}
+            Нету такого,
+        {% endif %}
+        2023
     </footer>
 </body>
 </html>
