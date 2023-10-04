@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for,render_template
 #url_for возвращает нужный нам путь в виде строки.
 #redirect - автоматическая переадресация посетителя с одного URL-адреса на другой.
 #из пакета flask добываем класс Flask:
@@ -187,3 +187,8 @@ def karakal():
     </body>
 </html>
 '''
+
+@app.route('/lab2/example')
+def example():
+    name = 'Иванова Анна'
+    return render_template('example.html', name=name)
