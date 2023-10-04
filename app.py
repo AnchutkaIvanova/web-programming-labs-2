@@ -50,8 +50,9 @@ def lab1():
             Werkzeug, а также шаблонизатор Jinja2. Относится к категории так называемых микрофреймворков минималистичных каркасов
             веб-приложений, сознательно предоставляющих лишь самые базовые возможности.
             </p>
-                <a href="/menu" target="_blank" >Меню</a>          # CСылка, прикоротой меню открывается в новом окне
-                
+                <a href="/menu">Меню</a>        
+        
+        
                 <h2>Реализованные роуты</h2>
                 <ul>
                    <li>
@@ -196,5 +197,17 @@ def example():
     group = 'ФБИ-14'
 
     kurs = '3 курс'
+    student = 'Иванова Анна'
 
-    return render_template('example.html', name=name, laba2=laba2, group=group, kurs=kurs)
+
+    fruits = [
+ {'name': 'яблоки', 'price': 100},
+ {'name': 'груши', 'price': 120},
+ {'name': 'апельсины', 'price': 80}, 
+ {'name': 'мандарины', 'price': 95},
+ {'name': 'манго', 'price': 321}
+        ]
+    return render_template('example.html', 
+                            name=name, lab_num=lab_num, group=group,
+                            course=course,  fruits=fruits)
+                            
