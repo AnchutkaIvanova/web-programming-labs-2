@@ -2,7 +2,7 @@ from flask import Blueprint, redirect, url_for
 #url_for возвращает нужный нам путь в виде строки.
 #redirect - автоматическая переадресация посетителя с одного URL-адреса на другой.
 #из пакета flask добываем класс Flask:
- lab1 = Blueprint('lab1',__name__) #Объект приложения 
+lab1 = Blueprint('lab1',__name__) #Объект приложения 
 
 
 @lab1.route("/")#Первый роут, или путь
@@ -26,6 +26,14 @@ def menu():
 
             <ol> 
              <a href="/lab1" target="_blank" >Первая лабораторная</a>
+            </ol>
+
+             <ol>
+             <a href="/lab2" target="_blank" >Вторая лабораторная</a>
+            </ol>
+
+            <ol>
+             <a href="/lab3/" target="_blank" >Третья лабораторная</a>
             </ol>
 
             <footer>
