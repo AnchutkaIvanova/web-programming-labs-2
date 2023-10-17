@@ -7,7 +7,7 @@ app = Flask(__name__) #Объект приложения
 @app.route("/index")
 def start():
     return redirect("/menu", code=302)# Return возвращает значение функции, возвращать означает выдать результат вычисления функции. 
-
+  
 @app.route("/menu")
 def menu():
     return"""
@@ -84,7 +84,7 @@ def oak():
         <title>Иванова Анна Алексеевна, лабораторная 1</title>
     </head>
      <body>
-     <link rel="stylesheet" href="'''+ url_for('static', filename='lab1.css')+'''">  #фрейворк указывает путь к файлу, link, нужен для подключения стилей
+     <link rel="stylesheet" href="'''+ url_for('static', filename='lab1.css')+'''">  
      <header>
      НГТУ, ФБ, Лабораторная работа 1
      </header>
@@ -201,25 +201,38 @@ def example():
 
 
     fruits = [
- {'name': 'яблоки', 'price': 100},
- {'name': 'груши', 'price': 120},
- {'name': 'апельсины', 'price': 80}, 
- {'name': 'мандарины', 'price': 95},
- {'name': 'манго', 'price': 321}
+        {'name': 'яблоки', 'price': 100},
+        {'name': 'груши', 'price': 120},
+        {'name': 'апельсины', 'price': 80}, 
+        {'name': 'мандарины', 'price': 95},
+        {'name': 'манго', 'price': 321}
         ]
 
- books = [
- {'author': 'Толстой Л.Н.', 'nazv': 'Анна Каренина', 'zanr': 'Классика', 'str': '159'},
- {'author': 'Джейн Остин', 'nazv': 'Гордость и предубеждение', 'zanr': 'Классика', 'str': '423'},
- {'author': 'Патрик Ленсиони', 'nazv': 'Евгений Онегин', 'zanr': 'Классика', 'str': '542'},
- {'author': 'Джек Лондон', 'nazv': 'Мартин Иден', 'zanr': 'Классика', 'str': '600'},
- {'author': 'Уильям Шекспир', 'nazv': 'Ромео и джульетта', 'zanr': 'Классика', 'str': '450'},
- {'author': 'Станислав Лем', 'nazv': 'Солярис', 'zanr': 'Фантастика', 'str': '320'},
- {'author': 'Фрэнк Герберт', 'nazv': 'Дюна', 'zanr': 'Фантастика', 'str': '400'},
- {'author': 'Дэн Симмонс', 'nazv': 'Гиперион', 'zanr': 'Фантастика', 'str': '243'},
- {'author': 'Нил Стивенсон', 'nazv': 'Анафем', 'zanr': 'Фантастика', 'str': '156'},
- {'author': 'Айзек Азимов', 'nazv': 'Конец вечности', 'zanr': 'Фантастика', 'str': '356'}
+    books = [
+        {'author': 'Толстой Л.Н.', 'nazv': 'Анна Каренина', 'zanr': 'Классика', 'str': '159'},
+        {'author': 'Джейн Остин', 'nazv': 'Гордость и предубеждение', 'zanr': 'Классика', 'str': '423'},
+        {'author': 'Патрик Ленсиони', 'nazv': 'Евгений Онегин', 'zanr': 'Классика', 'str': '542'},
+        {'author': 'Джек Лондон', 'nazv': 'Мартин Иден', 'zanr': 'Классика', 'str': '600'},
+        {'author': 'Уильям Шекспир', 'nazv': 'Ромео и джульетта', 'zanr': 'Классика', 'str': '450'},
+        {'author': 'Станислав Лем', 'nazv': 'Солярис', 'zanr': 'Фантастика', 'str': '320'},
+        {'author': 'Фрэнк Герберт', 'nazv': 'Дюна', 'zanr': 'Фантастика', 'str': '400'},
+        {'author': 'Дэн Симмонс', 'nazv': 'Гиперион', 'zanr': 'Фантастика', 'str': '243'},
+        {'author': 'Нил Стивенсон', 'nazv': 'Анафем', 'zanr': 'Фантастика', 'str': '156'},
+        {'author': 'Айзек Азимов', 'nazv': 'Конец вечности', 'zanr': 'Фантастика', 'str': '356'}
         ]
     return render_template('example.html', 
                             name=name, laba2=laba2, group=group,
                             kurs=kurs, student=student, fruits=fruits, books=books)
+
+@app.route('/lab2/')
+def lab2():
+    return render_template('lab2.html')
+
+@app.route('/lab2/cosmetic')
+def cosmetic ():
+    return render_template('cosmetic.html')
+
+
+@app.route('/777/')
+def ziro():
+    return 'ziro'
