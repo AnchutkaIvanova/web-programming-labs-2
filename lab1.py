@@ -36,6 +36,10 @@ def menu():
              <a href="/lab3/" target="_blank" >Третья лабораторная</a>
             </ol>
 
+            <ol>
+             <a href="/lab4/" target="_blank" >Четвертая лабораторная</a>
+            </ol>
+
             <footer>
             &copy; Иванова Анна Алексеевна, ФБИ-14, 3 курс, 2023
             </footer>

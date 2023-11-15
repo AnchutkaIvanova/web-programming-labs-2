@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: rgb(118, 149, 206);
+    background-color: rgb(240, 243, 248);
     color: rgb(0, 0, 0);
     font-size: 20pt;
 }
@@ -13,7 +13,7 @@ main {
 header {
     margin-bottom: 30px;
     padding: 20px;
-    background: rgb(240, 137, 157);
+    background: rgb(151, 218, 238);
 }
 
 footer {
